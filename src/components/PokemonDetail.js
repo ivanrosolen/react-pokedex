@@ -5,7 +5,7 @@ const PokemonDetail = ({ pokemon }) => {
 
   return (
     <section>
-      <img src={sprite}/>
+      <img src={sprite} alt=""/>
       <div>
         <h1>ID: {id} {name}</h1>
         <p>Type: {type}</p>

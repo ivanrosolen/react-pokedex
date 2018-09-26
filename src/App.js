@@ -9,10 +9,9 @@ class App extends Component {
     this.state = {
       pokemon: {}
     };
-    this.handleOnClick = this.handleOnClick.bind(this);
   }
 
-  handleOnClick(id) {
+  handleOnClick = (id) => {
     fetch(`/api/v2/pokemon/${id}/`)
       .then(res => res.json())
       .then(data => {
@@ -26,7 +25,6 @@ class App extends Component {
     return (
       <div className="App">
         <input type="text" onChange={evt => this.handleOnClick(evt.target.value)} />
-        <button onClick={evt => this.handleOnClick(1)}>Pokemon 1</button>
         <button onClick={evt => this.handleOnClick(25)}>Pokemon 25</button>
         <PokemonDetail pokemon={this.state.pokemon} />
       </div>
